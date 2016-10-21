@@ -1,0 +1,616 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MJAntiVirus.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Max Payne XP.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\Spiderman - The Movie.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\AvP PH2.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\AvP PH3.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\AvP PH.ico"
+IDI_ICON5               ICON    DISCARDABLE     "res\\Diablo II 2.ico"
+IDI_ICON6               ICON    DISCARDABLE     "res\\Diablo II.ico"
+IDI_ICON7               ICON    DISCARDABLE     "res\\Sims XP.ico"
+IDI_ICON_CDROM          ICON    DISCARDABLE     "res\\cdrom.ico"
+IDI_ICON_DOCUMENT       ICON    DISCARDABLE     "res\\document.ico"
+IDI_ICON_HARDDISK       ICON    DISCARDABLE     "res\\harddisk.ico"
+IDI_ICON_MEMORY         ICON    DISCARDABLE     "res\\memory.ico"
+IDI_ICON_MYCOMPUTER     ICON    DISCARDABLE     "res\\mycomputer.ico"
+IDI_ICON_SYSFILE        ICON    DISCARDABLE     "res\\sysfile.ico"
+IDI_ICON_USB            ICON    DISCARDABLE     "res\\usb.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MJANTIVIRUS_DIALOG DIALOGEX 0, 0, 575, 340
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "病毒查杀程序"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List3",IDC_LIST_OUTLOOK,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,1,1,63,338,WS_EX_TRANSPARENT
+    CONTROL         "Tree1",IDC_TRDISKTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | 
+                    TVS_CHECKBOXES | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,
+                    65,3,286,257,WS_EX_TRANSPARENT
+    PUSHBUTTON      "开始杀毒",IDC_BTN_START,380,15,43,26,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LB_SHOWF,71,286,495,42,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "暂停杀毒",IDC_BTN_PAUSE,426,15,43,26,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    PUSHBUTTON      "停止杀毒",IDC_BTN_STOP,472,15,43,26,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_TIME,381,233,174,15,ES_READONLY | NOT 
+                    WS_VISIBLE | NOT WS_BORDER,WS_EX_TRANSPARENT
+    CONTROL         "List2",IDC_LIST_SHOWRLT,"SysListView32",LVS_REPORT | 
+                    NOT WS_VISIBLE | WS_TABSTOP,381,58,174,172,
+                    WS_EX_TRANSPARENT
+    EDITTEXT        IDC_LB_FILENUM,71,263,280,14,ES_READONLY | NOT 
+                    WS_VISIBLE | NOT WS_BORDER,WS_EX_TRANSPARENT
+    CONTROL         "List2",IDC_LIST_SELEICON,"SysListView32",LVS_SINGLESEL | 
+                    LVS_SHOWSELALWAYS | NOT WS_VISIBLE | WS_BORDER | 
+                    WS_TABSTOP,65,2,285,230
+    CONTROL         "",IDC_AGENT1,"{D45FD31B-5C6E-11D1-9EC1-00C04FD7081F}",
+                    0x0,356,207,21,21
+END
+
+IDD_DLG_SCANSET DIALOG DISCARDABLE  75, 20, 331, 257
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "杀毒设置"
+FONT 10, "宋体"
+BEGIN
+    GROUPBOX        "查毒前先扫描内存",IDC_STATIC,30,19,123,32
+    CONTROL         "是(建议)",IDC_RADIO_MEMFIRST,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,40,34,44,15
+    CONTROL         "否",IDC_RADIO_UNMEMFIRST,"Button",BS_AUTORADIOBUTTON,
+                    109,34,26,15
+    GROUPBOX        "发现病毒时",IDC_STATIC,30,61,123,97
+    CONTROL         "直接删除",IDC_RADIO_DERDEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,40,74,109,15
+    CONTROL         "先杀毒若不成功则删除(建议)",IDC_RADIO_KILLDEL,"Button",
+                    BS_AUTORADIOBUTTON,40,94,109,15
+    CONTROL         "先杀毒若不成功则提示",IDC_RADIO_KILLNOTE,"Button",
+                    BS_AUTORADIOBUTTON,40,114,109,15
+    CONTROL         "直接提示",IDC_RADIO_DERNOTE,"Button",BS_AUTORADIOBUTTON,
+                    40,134,109,15
+    GROUPBOX        "扫描文件",IDC_STATIC,172,19,124,79
+    CONTROL         "扫描全部类型文件(建议)",IDC_RADIO_ALLFILE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,188,36,91,22
+    CONTROL         "只扫描可执行文件",IDC_RADIO_EXEFILE,"Button",
+                    BS_AUTORADIOBUTTON,188,63,91,22
+    GROUPBOX        "扫描速度",IDC_STATIC,172,105,124,102
+    CONTROL         "高速",IDC_RADIO_HIGHSPEED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,188,121,97,14
+    CONTROL         "中速(建议)",IDC_RADIO_MIDSPEED,"Button",
+                    BS_AUTORADIOBUTTON,188,152,97,14
+    CONTROL         "低速",IDC_RADIO_LOWSPEED,"Button",BS_AUTORADIOBUTTON,
+                    188,183,97,14
+    GROUPBOX        "扫描完成后自动关机",IDC_STATIC,30,168,123,39
+    CONTROL         "是",IDC_RADIO_TURNOFFAFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,40,183,44,15
+    CONTROL         "否",IDC_RADIO_NONTURNOFF,"Button",BS_AUTORADIOBUTTON,
+                    109,183,26,15
+    PUSHBUTTON      "确定",IDC_BTN_SCANSETOK,79,221,60,20
+    PUSHBUTTON      "取消",IDC_BTN_SCANSETCANCEL,190,221,60,20
+END
+
+IDD_PROP1 DIALOG DISCARDABLE  0, 0, 236, 150
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "启动"
+FONT 9, "新宋体"
+BEGIN
+    CONTROL         "系统启动时自动运行程序",IDC_PROP1_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,61,17,112,12
+    GROUPBOX        "系统启动时扫描",IDC_STATIC,21,39,194,93
+    CONTROL         "扫描内存",IDC_PROP1_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,43,52,151,11
+    CONTROL         "扫描系统文件",IDC_PROP1_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,43,71,151,11
+    CONTROL         "扫描移动存储",IDC_PROP1_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,43,90,151,11
+    CONTROL         "扫描我的电脑",IDC_PROP1_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,43,109,151,11
+END
+
+IDD_PROP2 DIALOG DISCARDABLE  0, 0, 235, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "监视"
+FONT 9, "新宋体"
+BEGIN
+    GROUPBOX        "系统监视",IDC_STATIC,15,10,204,61
+    GROUPBOX        "网络监视",IDC_STATIC,16,80,204,61
+    CONTROL         "监视剪切板(此功能暂无)",IDC_PROP2_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,69,22,100,12
+    CONTROL         "监视内存中所有进程",IDC_PROP2_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,69,38,92,12
+    CONTROL         "监视所有文件(此功能暂无)",IDC_PROP2_CHECK3,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,69,54,108,12
+    CONTROL         "监控上网过程(此功能暂无)",IDC_PROP2_CHECK4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,69,90,108,12
+    CONTROL         "监控所有端口",IDC_PROP2_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,69,106,92,12
+    CONTROL         "禁用所有端口(此功能暂无)",IDC_PROP2_CHECK6,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,69,122,111,12
+END
+
+IDD_PROP3 DIALOG DISCARDABLE  0, 0, 235, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "服务"
+FONT 9, "新宋体"
+BEGIN
+    CONTROL         "不定期进行病毒库升级（不推荐）",IDC_PROP3_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,44,14,147,14
+    GROUPBOX        "定期升级频率",IDC_STATIC,19,40,193,92
+    CONTROL         "每天",IDC_PROP3_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,56,88,12
+    CONTROL         "每三天",IDC_PROP3_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,82,88,12
+    CONTROL         "每星期",IDC_PROP3_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,108,87,12
+END
+
+IDD_DLG_COMPUTERINFO DIALOG DISCARDABLE  110, 30, 255, 225
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "计算机信息"
+FONT 10, "新宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,98,200,50,14
+    LTEXT           "计算机名：",IDC_STATIC,35,17,42,12
+    EDITTEXT        IDC_EDIT_CPTINFO1,100,15,123,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO2,100,38,123,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO3,100,61,122,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO4,100,84,122,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO5,100,107,123,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO6,100,130,123,18,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CPTINFO7,100,153,124,18,ES_AUTOHSCROLL
+    LTEXT           "操作系统：",IDC_STATIC,35,40,42,12
+    LTEXT           "CUP频率：",IDC_STATIC,35,63,42,12
+    LTEXT           "物理内存总数：",IDC_STATIC,35,86,58,12
+    LTEXT           "剩余可用内存：",IDC_STATIC,35,109,56,12
+    LTEXT           "剩余内存百分比：",IDC_STATIC,35,132,64,12
+    LTEXT           "本机IP地址：",IDC_STATIC,35,155,55,12
+    EDITTEXT        IDC_EDIT_CPTINFO8,100,176,125,18,ES_AUTOHSCROLL
+    LTEXT           "本机MAC地址：",IDC_STATIC,35,178,56,12
+END
+
+IDD_LOCK_DLG DIALOGEX 0, 50, 196, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "锁定计算机"
+FONT 14, "新宋体", 0, 0, 0x1
+BEGIN
+    LTEXT           "请输入密码：",IDC_STATIC,11,19,49,11
+    EDITTEXT        IDC_LOCK_EDIT1,61,17,123,14,ES_PASSWORD,WS_EX_STATICEDGE
+    PUSHBUTTON      "确定",IDC_LOCK_BTN1,31,40,58,13
+    PUSHBUTTON      "屏幕保护",IDC_LOCK_BTN_SCREEN,107,40,58,13
+END
+
+IDD_DLG_SETPASSWORD DIALOGEX 0, 50, 187, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "设置锁定计算机密码"
+FONT 12, "新宋体", 0, 0, 0x1
+BEGIN
+    LTEXT           "请设置密码：",IDC_STATIC,10,17,51,15
+    EDITTEXT        IDC_EDIT1,63,15,114,16,ES_PASSWORD,WS_EX_STATICEDGE
+    PUSHBUTTON      "确定",IDC_BUTTON1,61,40,65,15
+END
+
+IDD_DLG_LOCKORSET DIALOG DISCARDABLE  120, 50, 158, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "锁定计算机"
+FONT 12, "新宋体"
+BEGIN
+    PUSHBUTTON      "设定解锁密码",IDC_BTN_SETCODE,15,21,55,15
+    PUSHBUTTON      "锁定计算机",IDC_BTN_LOCKCPT,87,21,55,15
+END
+
+IDD_DLG_MONITORFILE DIALOGEX 50, 30, 242, 152
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "系统文件及目录监视"
+FONT 12, "新宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "List2",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,1,1,239,124
+    EDITTEXT        IDC_STATE,1,127,83,13,ES_READONLY
+    PUSHBUTTON      "开始监视",IDC_START,95,129,43,13
+    PUSHBUTTON      "停止监视",IDC_STOP,143,129,43,13
+    PUSHBUTTON      "清空",IDC_CLEAR,191,129,43,13
+END
+
+IDD_FILEENCRY_DIALOG DIALOG DISCARDABLE  50, 30, 245, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文本文件的加密与解密"
+FONT 12, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDBODY,7,18,231,98,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "打开文件",IDC_BTOPEN,46,121,45,15
+    PUSHBUTTON      "加密",IDC_BTENCRY,100,121,45,15
+    PUSHBUTTON      "解密",IDC_BTUNENCRY,154,121,45,15
+    LTEXT           "",IDC_FILEPATH,7,7,231,11
+END
+
+IDD_FOLDERENCRY_DIALOG DIALOG DISCARDABLE  50, 60, 227, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件夹加密"
+FONT 12, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDDIR,21,16,121,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "选择文件夹",ID_ADD,154,14,51,16
+    PUSHBUTTON      "加密",IDC_BTENCRY,45,39,61,17
+    PUSHBUTTON      "解密",IDC_BTUNENCRY,121,39,61,17
+END
+
+IDD_ABOUT_DIALOG DIALOGEX 60, 20, 222, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "关于我的毕业设计"
+FONT 14, "新宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         166,IDC_STATIC,"Static",SS_BITMAP,0,0,224,156
+    CTEXT           "新疆农业大学",IDC_LABEL1,84,15,53,9
+    CTEXT           "计算机科学与信息工程学院",IDC_LABEL2,59,31,103,11
+    CTEXT           "毕业设计题目：使用VC++下的MFC开发WINDOWS应用 --病毒查杀程序",
+                    IDC_LABEL3,22,49,178,19
+    CTEXT           "指导教师：冯向萍",IDC_LABEL4,74,74,73,10
+    CTEXT           "计算机科学与技术052班:马健\n学号:054632236",IDC_LABEL5,
+                    56,91,110,17
+    CTEXT           "2009年4月23日   1.0版\n2009年4月30日   1.1版",
+                    IDC_LABEL6,65,115,91,17
+END
+
+IDD_DLG_NETMONI DIALOG DISCARDABLE  40, 25, 329, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "网络监听"
+FONT 12, "新宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,7,7,315,144
+    PUSHBUTTON      "开始监听",IDC_BTN_BEGINLISTEN,75,159,68,19,BS_FLAT
+    PUSHBUTTON      "停止监听",IDC_BTN_CANCEL,186,159,68,19,BS_FLAT
+END
+
+IDD_DLG_REG DIALOG DISCARDABLE  80, 50, 204, 86
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "注册对话框"
+FONT 12, "新宋体"
+BEGIN
+    LTEXT           "请输入注册码：",IDC_STATIC,8,9,58,10
+    EDITTEXT        IDC_EDIT_REGCODE,71,7,126,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "注册",IDC_BTN_REG,41,37,54,12,BS_FLAT
+    PUSHBUTTON      "退出",IDC_BTN_QUITREG,108,37,54,12,BS_FLAT
+    LTEXT           "",IDC_LAB_REGSTATE,8,58,187,22
+END
+
+IDD_DLG_SCREENPROTECT DIALOG DISCARDABLE  0, 0, 184, 91
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MJAntiVirus Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MJAntiVirus\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MJAntiVirus.EXE\0"
+            VALUE "ProductName", "MJAntiVirus 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MJANTIVIRUS_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_DLG_SCANSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_PROP1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_PROP2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PROP3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DLG_COMPUTERINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_LOCK_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_DLG_SETPASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_DLG_LOCKORSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_DLG_MONITORFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 240
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_FILEENCRY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_FOLDERENCRY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_DLG_NETMONI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DLG_REG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\美丽赛里木湖畔11.bmp"
+IDB_LEFTBITMAP          BITMAP  DISCARDABLE     "res\\LEFT.bmp"
+IDB_ITEMBITMAP          BITMAP  DISCARDABLE     "res\\ITEM.bmp"
+IDB_BITMAP2             BITMAP  DISCARDABLE     "res\\辛勤的摄影师.bmp"
+IDB_BITMAP3             BITMAP  DISCARDABLE     "res\\5-搬家.bmp"
+IDB_BITMAP4             BITMAP  DISCARDABLE     "res\\遍地黄花分外香6.bmp"
+IDB_BITMAP5             BITMAP  DISCARDABLE     "res\\美丽的赛里木湖畔.bmp"
+IDB_BITMAP6             BITMAP  DISCARDABLE     "res\\塞里木湖野天鹅.bmp"
+IDB_BITMAP7             BITMAP  DISCARDABLE     "res\\塞里木湖野鸭子.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_TRAYMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "毕业设计程序"
+    BEGIN
+        MENUITEM "还原对话框",                  ID_MENUITEM_RESTORE
+        MENUITEM SEPARATOR
+        MENUITEM "显示当前进程",                ID_MENUITEM_SHOWPROC
+        MENUITEM "获取计算机属性",              ID_MENUITEM_CMPINFO
+        MENUITEM "锁定计算机",                  ID_MENUITEM_LOCK
+        MENUITEM SEPARATOR
+        MENUITEM "操作系统监视",                ID_MENUITEM_SYSMONI
+        MENUITEM "网络监视",                    ID_MENUITEM_NETMONI
+        MENUITEM SEPARATOR
+        MENUITEM "注册",                        ID_MENUITEM_REGISTER
+        MENUITEM "关于本程序",                  ID_MENUITEM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "退出程序",                    ID_MENUITEM_CLOSE
+        MENUITEM SEPARATOR
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MJANTIVIRUS_DIALOG DLGINIT
+BEGIN
+    IDC_AGENT1, 0x376, 16, 0
+0x0000, 0x0000, 0x0202, 0x0000, 0x034f, 0x0000, 0x034f, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MJAntiVirus.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

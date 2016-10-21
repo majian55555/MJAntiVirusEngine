@@ -1,0 +1,197 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MJAntiVirus - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F5.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/MJAntiVirus.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlanimationnames.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlaudioobjectex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlballoonex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcharacterex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcharacters.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcommand.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcommandex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcommandsex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlcommandswindow.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlex.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlpropertysheet.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlrequest.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\agentctlspeechinput.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\CVirus.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\DlgComputerInfo.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\DlgScanSet.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\FileEncryDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\FolderEncryDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\IconMenu.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\Label.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\ListButton.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\LockDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\LockOrSetDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\MJAntiVirus.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\MJAntiVirusAboutDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\MJAntiVirusDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\Mysocket.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\NetMoniDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\OutlookList.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\RegDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SetPasswordDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SetProp1.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SetProp2.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SetProp3.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SetPropSheet.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SreenProtectDlg.cpp"
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\SysMoniDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F5.tmp" 
+Creating temporary file "C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F6.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/MJAntiVirus.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\MaJian\桌面\刻光盘的内容\毕业设计源代码\MJAntiVirus\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F6.tmp" 
+Creating temporary file "C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F7.tmp" with contents
+[
+dll/HookDLL.lib dll/AntiVirusDLL2.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/MJAntiVirus.pdb" /machine:I386 /out:"Release/MJAntiVirus.exe" 
+".\Release\agentctlanimationnames.obj"
+".\Release\agentctlaudioobjectex.obj"
+".\Release\agentctlballoonex.obj"
+".\Release\agentctlcharacterex.obj"
+".\Release\agentctlcharacters.obj"
+".\Release\agentctlcommand.obj"
+".\Release\agentctlcommandex.obj"
+".\Release\agentctlcommandsex.obj"
+".\Release\agentctlcommandswindow.obj"
+".\Release\agentctlex.obj"
+".\Release\agentctlpropertysheet.obj"
+".\Release\agentctlrequest.obj"
+".\Release\agentctlspeechinput.obj"
+".\Release\CVirus.obj"
+".\Release\DlgComputerInfo.obj"
+".\Release\DlgScanSet.obj"
+".\Release\FileEncryDlg.obj"
+".\Release\FolderEncryDlg.obj"
+".\Release\IconMenu.obj"
+".\Release\Label.obj"
+".\Release\ListButton.obj"
+".\Release\LockDlg.obj"
+".\Release\LockOrSetDlg.obj"
+".\Release\MJAntiVirus.obj"
+".\Release\MJAntiVirusAboutDlg.obj"
+".\Release\MJAntiVirusDlg.obj"
+".\Release\Mysocket.obj"
+".\Release\NetMoniDlg.obj"
+".\Release\OutlookList.obj"
+".\Release\RegDlg.obj"
+".\Release\SetPasswordDlg.obj"
+".\Release\SetProp1.obj"
+".\Release\SetProp2.obj"
+".\Release\SetProp3.obj"
+".\Release\SetPropSheet.obj"
+".\Release\SreenProtectDlg.obj"
+".\Release\StdAfx.obj"
+".\Release\SysMoniDlg.obj"
+".\Release\MJAntiVirus.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F7.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+agentctlanimationnames.cpp
+agentctlaudioobjectex.cpp
+agentctlballoonex.cpp
+agentctlcharacterex.cpp
+agentctlcharacters.cpp
+agentctlcommand.cpp
+agentctlcommandex.cpp
+agentctlcommandsex.cpp
+agentctlcommandswindow.cpp
+agentctlex.cpp
+agentctlpropertysheet.cpp
+agentctlrequest.cpp
+agentctlspeechinput.cpp
+CVirus.cpp
+DlgComputerInfo.cpp
+DlgScanSet.cpp
+FileEncryDlg.cpp
+FolderEncryDlg.cpp
+IconMenu.cpp
+Label.cpp
+Generating Code...
+Compiling...
+ListButton.cpp
+LockDlg.cpp
+LockOrSetDlg.cpp
+MJAntiVirus.cpp
+MJAntiVirusAboutDlg.cpp
+MJAntiVirusDlg.cpp
+Mysocket.cpp
+NetMoniDlg.cpp
+OutlookList.cpp
+RegDlg.cpp
+SetPasswordDlg.cpp
+SetProp1.cpp
+SetProp2.cpp
+SetProp3.cpp
+SetPropSheet.cpp
+SreenProtectDlg.cpp
+SysMoniDlg.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F9.tmp" with contents
+[
+/nologo /o"Release/MJAntiVirus.bsc" 
+".\Release\StdAfx.sbr"
+".\Release\agentctlanimationnames.sbr"
+".\Release\agentctlaudioobjectex.sbr"
+".\Release\agentctlballoonex.sbr"
+".\Release\agentctlcharacterex.sbr"
+".\Release\agentctlcharacters.sbr"
+".\Release\agentctlcommand.sbr"
+".\Release\agentctlcommandex.sbr"
+".\Release\agentctlcommandsex.sbr"
+".\Release\agentctlcommandswindow.sbr"
+".\Release\agentctlex.sbr"
+".\Release\agentctlpropertysheet.sbr"
+".\Release\agentctlrequest.sbr"
+".\Release\agentctlspeechinput.sbr"
+".\Release\CVirus.sbr"
+".\Release\DlgComputerInfo.sbr"
+".\Release\DlgScanSet.sbr"
+".\Release\FileEncryDlg.sbr"
+".\Release\FolderEncryDlg.sbr"
+".\Release\IconMenu.sbr"
+".\Release\Label.sbr"
+".\Release\ListButton.sbr"
+".\Release\LockDlg.sbr"
+".\Release\LockOrSetDlg.sbr"
+".\Release\MJAntiVirus.sbr"
+".\Release\MJAntiVirusAboutDlg.sbr"
+".\Release\MJAntiVirusDlg.sbr"
+".\Release\Mysocket.sbr"
+".\Release\NetMoniDlg.sbr"
+".\Release\OutlookList.sbr"
+".\Release\RegDlg.sbr"
+".\Release\SetPasswordDlg.sbr"
+".\Release\SetProp1.sbr"
+".\Release\SetProp2.sbr"
+".\Release\SetProp3.sbr"
+".\Release\SetPropSheet.sbr"
+".\Release\SreenProtectDlg.sbr"
+".\Release\SysMoniDlg.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\MaJian\LOCALS~1\Temp\RSP13F9.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+MJAntiVirus.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

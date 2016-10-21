@@ -1,0 +1,517 @@
+Microsoft Agent 控件比Office 97中的助手更进了一步，它提供的动画人物不仅有生动、有趣的动作，而 且还能通过声卡、麦克风与用户进行交谈，这些功能使计算机更具人性魅力，其应用前途相当广泛。这中新的技术方式更改了以前面最多是面对操作提示，或是使用向导的枯燥、无味的交互方式。让使用者在工作之余也能体会到一些乐趣。还有一点就是该开发控件是由MS免费提供，你所需要的就是下载一个AgentCtrl的安装软件，然后再下载自己感兴趣的Agent文件(ACS)，在使用时可以通过AgentCtrl调入不同的Agent文件来使用不同的角色，而操作不同的Agent都使用相同的代码，是不是很方便和高效。  
+一般来讲Agent控件都需要支持一些固定的动作，如：说，看，移动，隐藏等，同时还可支持一些不定的动作，如：魔术师Merlin可以执行的动作有，DoMagic1，DoMagic2，Think，Greet等，还有一些循环动作：Hearing_1，Hearing_2等。就是这些动作让Agent看起来更加可爱，而且能给使用者带来乐趣。  
+
+不幸的是，在VC中使用Agent却是一件让人伤脑筋的事，因为在使用了Insert ActiveX Control后，VC会产生多个C++类，其中繁多的接口定义会让人有写摸不着头脑。出与这个原因我使用VB开发了一个易于被VC使用的OCX控件，通过该控件VC开发人员可以方便的使用MS Agent所提供的功能。下面列出该OCX支持的方法：  
+
+名称 参数 说明  
+Load LPCSTR 指明Agent文件的路径 装入MS Agent  
+Unload n/a 清除已经装载的Agent  
+Show BOOL true:显示 false:隐藏 是否显示Agent  
+Speak LPCSTR 所说的话 朗读  
+Play LPCSTR 动作名称 执行动作  
+MoveTo int ,int x,y坐标 移动到某位置  
+GestureAt int ,int x,y坐标 朝某方向做手势  
+StopAll n/a 停止当前动作  
+
+使用方法：在编辑对话框时按下右键，选择插入ActiveX Control，选择插入vchelpMsAgentWrap。然后对该控件生成一个具体的变量(m_agent)，这时VC会生成相应的文件，该文件定义了新的类。类中的成员函数已经在上面列出了。下面的代码就是调用这些功能命令Agent执行相应的动作。  
+
+装入Agent 
+CString szP("C:\\WINDOWS\\MSAGENT\\CHARS\\merlin.acs"); 
+m_agent.LoadChar(szP); 
+
+执行动作 
+m_agent.Speak("hello , this is a demo !"); 
+m_agent.MoveTo(m_x,m_y); 
+错误处理 
+TRY 
+{ 
+m_agent.Play("DoMagic4");//执行一个不存在的动作 
+} 
+CATCH(CException, e) 
+{ 
+char szBuf[100]; 
+e->GetErrorMessage(szBuf,100); 
+strcat(szBuf,"\n - caught error"); 
+AfxMessageBox(szBuf); 
+e->Delete(); 
+} 
+END_CATCH 
+
+
+用过Office97或Office2000的人会知道，Office软件中有一个可爱的Office助手，能够根据不同的操作作出一些有趣的提示与动画，使用户操作更人性化、有趣化。正象这Office助手“大眼侠”一样，Microsoft提供了代理软件开发技术，称为“Microsoft Agent”，它能支持中文。有强大的交互功能与人性特点，不仅能给出有趣的提示信息，还能给出幽默的动画效果，使用“Microsoft Agent”能让您的程序增色不少。
+
+“Microsoft Agent”是一套ActiveX控制，您可以到http://www.microsoft.com/msagent/default.asp下载其相关程序msagent.exe，安装即可。Agent的动画文件支持单结构角色文件(*.acs)，也支持多结构角色文件(*.acf)，本文介绍的是前者。执行效果如下： 
+
+本文程序中所演示的James角色,如果您没有安装，可以先到http://www.msagentring.org/chars.htm下载安装。
+
+实现办法：
+一、新建工程myagent：
+建立基于对话框的VC++工程MyAgent；
+
+二、在窗口中添加ActiveX组件：Microsoft Agent：
+正确安装了“Microsoft Agent”之后，系统中会新增该ActiveX控件可以使用，目前该ActiveX的最高版本是2.0，即“Microsoft Agent Control 2.0”；
+
+
+三、开始使用"Microsoft Agent"
+1、定义成员变量
+利用ClassWizard为“Microsoft Agent”定义成员变量m_sysAgent，即：
+
+CAgentCtlEx m_sysAgent;
+2、定义其他变量
+首选在窗口的头文件中增加引用如下头文件，即： 
+#include "agentctlcharacters.h"
+#include "agentctlcharacterex.h"
+#include "agentctlrequest.h"
+再定义保护变量： 
+CAgentCtlCharacters m_Characters;
+CAgentCtlCharacterEx m_Ex;
+CAgentCtlRequest m_Request;
+3、开始使用：
+可在初始化窗体进行动画文件的载入，即在CMyAgentDlg::OnInitDialog()中加入如下代码： 
+COleVariant iv("0");
+m_Characters=m_sysAgent.GetCharacters();
+m_Request=m_Characters.Load("Jame",COleVariant("C:\\WINDOWS\\msagent\\chars\\James.acs"));
+m_Ex=m_Characters.Character("Jame");
+m_Ex.Show(iv);
+为在窗口关闭时对动画文件进行卸载，在关闭窗口时可加入如下代码： 
+m_Characters.Unload("Jame");
+4、控制动画文件：
+在程序中可以完全控制该动画文件来完成各种动作，如显示、隐藏、文本提示、做动作，分别通过调用Show()，Hide()，Speek()以有Play()来完成。如想上动画表示欢迎，则可使用如下命令： 
+m_Ex.Play("Greet");
+具体的操作可参考控件的帮助文件，或浏览http://www.microsoft.com/msagent/default.asp。
+“Jame”动画主要提供如下动作：
+Acknowledge(承认)
+Alert(警告)
+Announce(声明)
+Blink(眨眼)
+Confused(困惑)
+Congratulate(祝贺)
+Decline(拒绝)
+Explain(解释)
+LookDown(向下看)
+LookUp(向上移动)
+MoveDown(向下移动)
+MoveLeft(向左移动)
+MoveRight(向右移动)
+Greet(问候)
+Read(读)
+Write(写)
+Search(查找)
+RestPose(恢复初始状态)
+Think(思考)
+……
+
+动画文件的下载及更详细的信息请参考：http://www.msagentring.org/chars.htm
+本文只提及了Agent的一小部分功能，读者可自行实现其他功能，不足之处请指出。
+注：示例程序在WindowsXP+Visual C++ 6.0环境下编译通过。
+Email:divvy@21cn.com
+
+
+VC中使用MS Agent
+
+闻怡洋 EMail: wyy_cq@188.net homepage: http://vchelp.163.net
+
+Microsoft Agent 控件比Office 97中的助手更进了一步，它提供的动画人物不仅有生动、有趣的动作，而 且还能通过声卡、麦克风与用户进行交谈，这些功能使计算机更具人性魅力，其应用前途相当广泛。这中新的技术方式更改了以前面最多是面对操作提示，或是使用向导的枯燥、无味的交互方式。让使用者在工作之余也能体会到一些乐趣。还有一点就是该开发控件是由MS免费提供，你所需要的就是下载一个AgentCtrl的安装软件，然后再下载自己感兴趣的Agent文件(ACS)，在使用时可以通过AgentCtrl调入不同的Agent文件来使用不同的角色，而操作不同的Agent都使用相同的代码，是不是很方便和高效。 
+
+一般来讲Agent控件都需要支持一些固定的动作，如：说，看，移动，隐藏等，同时还可支持一些不定的动作，如：魔术师Merlin可以执行的动作有，DoMagic1，DoMagic2，Think，Greet等，还有一些循环动作：Hearing_1，Hearing_2等。就是这些动作让Agent看起来更加可爱，而且能给使用者带来乐趣。 
+
+不幸的是，在VC中使用Agent却是一件让人伤脑筋的事，因为在使用了Insert ActiveX Control后，VC会产生多个C++类，其中繁多的接口定义会让人有写摸不着头脑。出与这个原因我使用VB开发了一个易于被VC使用的OCX控件，通过该控件VC开发人员可以方便的使用MS Agent所提供的功能。下面列出该OCX支持的方法： 名称 参数 说明 
+Load LPCSTR 指明Agent文件的路径 装入MS Agent 
+Unload n/a 清除已经装载的Agent 
+Show BOOL true:显示 false:隐藏 是否显示Agent 
+Speak LPCSTR 所说的话 朗读 
+Play LPCSTR 动作名称 执行动作 
+MoveTo int ,int x,y坐标 移动到某位置 
+GestureAt int ,int x,y坐标 朝某方向做手势 
+StopAll n/a 停止当前动作 
+
+
+
+使用方法：在编辑对话框时按下右键，选择插入ActiveX Control，选择插入vchelpMsAgentWrap。然后对该控件生成一个具体的变量(m_agent)，这时VC会生成相应的文件，该文件定义了新的类。类中的成员函数已经在上面列出了。下面的代码就是调用这些功能命令Agent执行相应的动作。 
+
+装入Agent
+	CString szP("C:\\WINDOWS\\MSAGENT\\CHARS\\merlin.acs");
+	m_agent.LoadChar(szP);
+
+执行动作
+	m_agent.Speak("hello , this is a demo !");
+	m_agent.MoveTo(m_x,m_y);
+错误处理
+	TRY
+	{
+		m_agent.Play("DoMagic4");//执行一个不存在的动作
+	}
+	CATCH(CException, e)
+	{
+		char szBuf[100];
+		e->GetErrorMessage(szBuf,100);
+		strcat(szBuf,"\n - caught error");
+		AfxMessageBox(szBuf);
+		e->Delete();
+	}
+	END_CATCH
+
+
+Name  Ozzar   
+Version  1.50   
+File Name  Ozzar .acs  
+File Size  4286464   
+Original Width  128   
+Original Height  128   
+Pitch  50   
+Speed  150   
+Description     
+Extra Data     
+GUID  {5F213DE1-5584-11BD-A526-00A024636101}   
+101  Animations  Acknowledge
+Alert
+AlertReturn
+Announce
+Announce Return
+Blink
+Confused
+ConfusedReturn
+Congratulate
+CongratulateReturn
+Decline
+DontRecognize
+DontRecognizeReturn
+Explain
+Explain2
+Explain2Return
+Explain3
+Explain3Return
+Explain4
+Explain4Return
+ExplainReturn
+GestureDown
+GestureDownReturn
+GestureLeft
+GestureLeftReturn
+GestureRight
+GestureRightReturn
+GestureUp
+GestureUpReturn
+GetAttention
+GetAttentionReturn
+GlanceDown
+GlanceDownReturn
+GlanceLeft
+GlanceLeftReturn
+GlanceRight
+GlanceRightReturn
+GlanceUp
+GlanceUpReturn
+Greet
+GreetReturn
+HdGlanceDown
+HdGlanceDownReturn
+HdGlanceLeft
+HdGlanceLeftReturn
+HdGlanceRight
+HdGlanceRightReturn
+HdGlanceUp
+HdGlanceUpReturn
+Hear_1
+Hear_2
+Hear_3
+Hear_4
+Hide
+Idle1_1
+Idle1_2
+Idle1_3
+Idle1_4
+Idle1_5
+Idle1_6
+Idle2_1
+Idle2_2
+Idle2_3
+Idle3_1
+Idle3_2
+MoveDown
+MoveDownReturn
+MoveLeft
+MoveLeftLanding
+MoveRight
+MoveRightLanding
+MoveUp
+MoveUpReturn
+Pleased
+PleasedReturn
+Processing2_Return
+ProcessingReturn
+Read
+ReadContinued
+ReadReturn
+RestPose
+Reward
+RewardReturn
+Sad
+SadReturn
+Show
+StartListening
+StopListening
+Suggest
+SuggestReturn
+Surprised
+SurprisedReturn
+Think
+ThinkReturn
+Uncertain
+Uncertain Return
+Wave
+WaveReturn
+Write
+WriteContinued
+WriteReturn
+   
+5  Looping Animations  Processing
+Processing2
+Reading
+Searching
+Writing
+ 
+Name  Reaper   
+Version  2.00   
+File Name  Reaper .acs  
+File Size  452424   
+Original Width  180   
+Original Height  190   
+Pitch  50   
+Speed  150   
+Description  Grim,Reaper,Created by Glenn Saunders,Copyright 1998,I Pyxidis LLC,http://www.ipyxidis.com   
+Extra Data  R,Restpose,NULL,I,Intro,NULL,I,Exit,NULL,E,Angry,AngryReturn,E,Smile,NULL,E,Surprised,NULL,L,GlancingDown,GlancingDownReturn,L,GlancingLeft,GlancingLeftReturn,L,GlancingRight,GlancingRightReturn,L,GlancingUp,GlancingUpReturn,C,Twirl,TwirlReturn,_END_   
+GUID  {6DA70CD2-7355-11D2-B266-006097CF36DA}   
+17  Animations  Angry
+AngryReturn
+Exit
+GlancingDown
+GlancingDownReturn
+GlancingLeft
+GlancingLeftReturn
+GlancingRight
+GlancingRightReturn
+GlancingUp
+GlancingUpReturn
+Intro
+Restpose
+Smile
+Surrpised
+Twirl
+TwirlReturn
+   
+0  Looping Animations     
+
+
+Name  E-man   
+Version  2.00   
+File Name  E-man .acs  
+File Size  4908567   
+Original Width  128   
+Original Height  128   
+Pitch  65   
+Speed  110   
+Description  E-Man the desktop superhero. Created for 4Developers LLC by E-Clips Animations.   
+Extra Data     
+GUID  {2B528435-5643-11D3-A67B-0C102EC71950}   
+81  Animations  4DEV_Advert
+4DEV_Alert
+4DEV_bigface
+4DEV_Eat_Mail
+4DEV_EmailSign
+4DEV_Envelope
+4DEV_Envelope1
+4DEV_EnvelopeBounce
+4DEV_Excited
+4DEV_GetAttention
+4DEV_headstand
+4DEV_heckle
+4DEV_MuscleFlex1
+4DEV_MuscleFlex2
+4DEV_MuscleFlex3
+4DEV_PunchScreen
+4DEV_Pushups
+4DEV_spit_Envelope
+4DEV_surprise
+4DEV_UncleSam
+4DEV_wave
+Acknowledge
+Alert
+Announce
+Blink
+Confused
+Congratulate
+Decline
+DoMagic1
+DoMagic2
+DontRecognize
+Explain
+GestureDown
+GestureLeft
+GestureRight
+GestureUp
+GetAttention
+GetAttentionContinued
+GetAttentionReturn
+Greet
+Hearing_1
+Hearing_2
+Hide
+Idle1_1
+Idle1_2
+Idle1_3
+Idle2_1
+Idle2_2
+Idle3_1
+Idle3_2
+LookDown
+LookLeft
+LookRight
+LookUp
+MoveDown
+MoveLeft
+MoveRight
+MoveUp
+Pleased
+Process
+Processing
+Read
+ReadContinued
+Reading
+ReadReturn
+RestPose
+Sad
+Search
+Searching
+Show
+StartListening
+StopListening
+Suggest
+Surprised
+Think
+Uncertain
+Wave
+Write
+WriteContinued
+WriteReturn
+Writing
+   
+0  Looping Animations     
+
+
+Name  Hanz   
+Version  2.00   
+File Name  Hanz .acs  
+File Size  817715   
+Original Width  128   
+Original Height  128   
+Pitch  146   
+Speed  132   
+Description     
+Extra Data     
+GUID  {7D972160-2F3E-11D2-9803-F8708E13E540}   
+98  Animations  About
+AboutReturn
+Acknowledge
+Alert
+AlertReturn
+Announce
+Blink
+Confused
+ConfusedReturn
+Congratulate
+Congratulate_2
+CongratulateReturn
+Decline
+DeclineReturn
+DoMagic1
+DoMagic2
+DoMagic3
+DoMagic3Return
+DoMagicReturn
+DontRecognize
+DontRecognizeReturn
+Drag
+DragReturn
+Explain
+ExplainReturn
+GestureDown
+GestureDownReturn
+GestureLeft
+GestureLeftReturn
+GestureRight
+GestureRightReturn
+GestureUp
+GestureUpReturn
+GetAttention
+GetAttentionContinued
+GetAttentionReturn
+GlanceDown
+GlanceLeft
+GlanceRight
+GlanceUp
+Greet
+GreetReturn
+Hear_3
+Hearing_1
+Hearing_2
+Hide
+Idle1_1
+Idle1_2
+Idle2_1
+Idle2_2
+Idle3_2
+IdleReturn
+LookDown
+LookDownReturn
+LookLeft
+LookLeftReturn
+LookRight
+LookRightReturn
+LookUp
+LookUpReturn
+Move
+MoveDown
+MoveDownReturn
+MoveLeft
+MoveLeftReturn
+MoveReturn
+MoveRight
+MoveRightReturn
+MoveUp
+MoveUpReturn
+Pat
+Pleased
+PleasedReturn
+Process
+Read
+ReadContinued
+ReadReturn
+RestPose
+Sad
+SadReturn
+Search
+Show
+Smoke
+StartListening
+StopListening
+StopListeningReturn
+Suggest
+SuggestReturn
+Surprised
+SurprisedReturn
+Think
+ThinkReturn
+Uncertain
+UncertainReturn
+Wave
+Write
+WriteContinued
+WriteReturn
+   
+5  Looping Animations  Idle3_1
+Processing
+Reading
+Searching
+Writing
+ 
